@@ -1,0 +1,14 @@
+Nodes: Nodes are the fundamental building blocks of many computer science data structures. They form the basis for linked lists, stacks, queues, trees, and more.
+An individual node contains data and links to other nodes.
+Each data structure adds additional constraints or behavior to these features to create the desired structure.
+ structure:
+                    Node A
+                    [DATA :5]
+                        |
+                        V
+                    [Link:Node B]
+   
+Implementation:
+https://static-assets.codecademy.com/Courses/CS102-Data-Structures-And-Algorithms/Nodes/CS102_NodeImplementations_2_M2.svg
+
+                    
