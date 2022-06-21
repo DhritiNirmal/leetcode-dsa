@@ -15,3 +15,12 @@ If these links are null, it denotes that you have reached the end of the particu
 Often, due to the data structure, nodes may only be linked to a single other node. This makes it very important to consider how you implement modifying or removing nodes from a data structure.
 If you inadvertently remove the single link to a node, that node’s data and any linked nodes could be “lost” to your application. When this happens to a node, it is called an orphaned node.
 
+Linked Lists:
+
+Are comprised of nodes
+The nodes contain a link to the next node (and also the previous node for bidirectional linked lists)
+Can be unidirectional or bidirectional
+Are a basic data structure, and form the basis for many other data structures
+Have a single head node, which serves as the first node in the list
+Require some maintenance in order to add or remove nodes
+The methods we used are an example and depend on the exact use case and/or programming language being used
