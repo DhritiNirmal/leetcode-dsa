@@ -1,0 +1,35 @@
+Asymptotic notation is often used to describe the runtime of a program or algorithm, but it can also be used to describe the space, or memory, that a program or algorithm will need.
+def add_numbers(a, b):
+  return a + b
+This function has a space complexity of O(1), because the amount of space it needs will not change based on the input. While this function also has a constant runtime of O(1), most functions do not have matching space and time complexities.
+
+def simple_loop(input_array):
+  for i in input_array:
+    print(i)
+As we know, a simple for loop that goes through every element in an array of size n has a linear runtime of O(n). However, this function takes O(1) space since no new variables are being created and therefore no more space must be allocated.
+
+A function could have 10 arrays passed into it, but if all it does inside is print 'Hello World!', then it still takes O(1) space.
+
+Finding the Maximum Value in a Linked List:
+- set a variable, current, equal to the head node of the linked list
+- set the maximum to the value of current
+- while current has a next node
+    - set current to the next node of current
+    - if current's value is greater than the maximum, set maximum to current's value
+ 
+- return maximum
+
+Sort a Linked List:
+To sort a linked list, we can do the following:
+
+Instantiate a new linked list
+-Find the maximum value of our inputted linked list
+-Insert the maximum to the beginning of the new linked list
+-Remove the maximum value from the inputted linked list
+-Repeat steps 2-4 until the head node of the inputted linked list points to None
+-Return the new linked list
+
+A Queue data structure is based on First In First Out order. It takes O(1) runtime to retrieve the first item in a Queue. 
+
+A Stack data structure is based on First In Last Out order. Therefore, it takes O(N) runtime to retrieve the first value in a Stack because it is all the way at the bottom.
+
