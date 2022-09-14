@@ -8,59 +8,60 @@
 #If the first half begins with a smaller value, then we add that to the sorted list. We then compare the second smallest value of the first half with the first smallest value of the second half.
 
 #Every time we select the smaller value at the beginning of a half, we move the index of which item needs to be compared by one.
+#Merge Sort Algorithm:
 
-def merge(left_list, right_list):
-    sorted_list = []
-    left_list_index = right_list_index = 0
+#Step 1: Check if the list contains more than one items; if yes, divide the list into two halves, else the list is sorted
 
-    # We use the list lengths often, so its handy to make variables
-    left_list_length, right_list_length = len(left_list), len(right_list)
+#Step 2: The list is to be divided repeatedly until there is only a single element left in each sub-list
 
-    for _ in range(left_list_length + right_list_length):
-        if left_list_index < left_list_length and right_list_index < right_list_length:
-            # We check which value from the start of each list is smaller
-            # If the item at the beginning of the left list is smaller, add it
-            # to the sorted list
-            if left_list[left_list_index] <= right_list[right_list_index]:
-                sorted_list.append(left_list[left_list_index])
-                left_list_index += 1
-            # If the item at the beginning of the right list is smaller, add it
-            # to the sorted list
-            else:
-                sorted_list.append(right_list[right_list_index])
-                right_list_index += 1
+#Step 3: Recursively merge the sub-lists by arranging them in the given order until you get a single sorted list
 
-        # If we've reached the end of the of the left list, add the elements
-        # from the right list
-        elif left_list_index == left_list_length:
-            sorted_list.append(right_list[right_list_index])
-            right_list_index += 1
-        # If we've reached the end of the of the right list, add the elements
-        # from the left list
-        elif right_list_index == right_list_length:
-            sorted_list.append(left_list[left_list_index])
-            left_list_index += 1
+ 
 
-    return sorted_list
+Merge Sort program:
 
+def msort(mylist, left, right):
+    if right - left > 1:
+        middle = (left + right)//2
+        msort(mylist, left, middle)
+        msort(mylist, middle, right)
+        mlist(mylist, left, middle, right)
+ 
+def mlist(mylist, left, middle, right):
+    leftlist = mylist[left:middle]
+    rightlist = mylist[middle:right]
+    k = left
+    i = 0
+    j = 0
+    while (left + i < middle and middle + j < right):
+        if (leftlist[i] <= rightlist[j]):
+            mylist[k] = leftlist[i]
+            i = i + 1
+        else:
+            mylist[k] = rightlist[j]
+            j = j + 1
+        k = k + 1
+    if left + i < middle:
+        while k < right:
+            mylist[k] = leftlist[i]
+            i = i + 1
+            k = k + 1
+    else:
+        while k < right:
+            mylist[k] = rightlist[j]
+            j = j + 1
+            k = k + 1
+  
+  
+mylist = input('Enter the list values to be sorted: ').split()
+mylist = [int(x) for x in mylist]
+msort(mylist, 0, len(mylist))
+print('The sorted list is: ')
+print(mylist)
+The above program will allow the user to enter a list that is to be sorted and will display the final sorted list as shown below:
 
-def merge_sort(nums):
-    # If the list is a single element, return it
-    if len(nums) <= 1:
-        return nums
+OUTPUT:
 
-    # Use floor division to get midpoint, indices must be integers
-    mid = len(nums) // 2
-
-    # Sort and merge each half
-    left_list = merge_sort(nums[:mid])
-    right_list = merge_sort(nums[mid:])
-
-    # Merge the sorted lists into a new one
-    return merge(left_list, right_list)
-
-
-# Verify it works
-random_list_of_nums = [120, 45, 68, 250, 176]
-random_list_of_nums = merge_sort(random_list_of_nums)
-print(random_list_of_nums)
+Enter the list values to be sorted: 23 1 45 34 7
+The sorted list is:
+[1, 7, 23, 34, 45]
