@@ -123,3 +123,13 @@ def delAtPos(self,position):
                 del curr
         except Exception as e:
             print(str(e))
+
+          
+#length of the linked list
+def lent(self):
+    c = 0
+    curr=self.head
+    while curr!=None:
+        c+=1
+        curr=curr.next
+    return c
