@@ -102,3 +102,17 @@ print("\nDelete 10")
 root = deleteNode(root, 10)
 print("Inorder traversal: ", end=' ')
 inorder(root)
+
+
+/*
+Binary Search Tree Complexities
+Time Complexity
+Operation	Best Case Complexity	Average Case Complexity	Worst Case Complexity
+Search	O(log n)	O(log n)	O(n)
+Insertion	O(log n)	O(log n)	O(n)
+Deletion	O(log n)	O(log n)	O(n)
+Here, n is the number of nodes in the tree.
+
+Space Complexity
+The space complexity for all the operations is O(n).
+*/
