@@ -133,3 +133,23 @@ def lent(self):
         c+=1
         curr=curr.next
     return c
+
+
+# Sort the linked list
+    def sortLinkedList(self, head):
+        current = head
+        index = Node(None)
+
+        if head is None:
+            return
+        else:
+            while current is not None:
+                # index points to the node next to current
+                index = current.next
+
+                while index is not None:
+                    if current.data > index.data:
+                        current.data, index.data = index.data, current.data
+
+                    index = index.next
+                current = current.next
